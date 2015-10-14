@@ -1,0 +1,38 @@
+<center><img src="https://www.refreshmiami.com/wp-content/uploads/2014/03/wyncode.png" alt="what image shows" height="150" width="250"></center>
+
+<body background="http://www.hotdogyoga.co.za/wp-content/uploads/2015/06/hotdogbackground.jpg">
+</body>
+
+<p id="notice"><%= notice %></p>
+
+<h1 class="col-md-12 col-md-offset-4">Listing To Do Items</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="text-center">Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_items.each do |todo_item| %>
+      <tr>
+        <td class="text-center"><%= todo_item.description %></td>
+        <td><%= link_to 'Show', todo_item %></td>
+        <td><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+        <td><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New To Do item', new_todo_item_path, class: 'btn btn-lg btn-default col-md-offset-5' %>
+
+
+
+
+ 
+
